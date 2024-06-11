@@ -1,0 +1,17 @@
+<!--users/templates/registration/logged_out.html-->
+
+{% extends 'base.html' %}
+
+{% comment %} {% block content %}
+<h2>Logged Out Successfully</h2>
+
+<a href="{% url 'dashboard' %}">Back to dashboard</a>
+{% endblock %} {% endcomment %}
+
+
+<!-- Logout form and link -->
+<form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
